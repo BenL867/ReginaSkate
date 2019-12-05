@@ -3375,6 +3375,7 @@
 	#banner {
 		padding: 13em 0 11em 0;
 		background-image: url(https://images.cdn.snowleader.com/media/wysiwyg/Nike-guide-taille.jpg);
+		background-attachment: fixed; 
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: right;
@@ -3589,7 +3590,7 @@
 	}
 
 	#one {
-		padding: 6em 0 4em 0;
+		padding: 4em 0 4em 0;
 	}
 
 		@media screen and (max-width: 980px) {
@@ -3603,7 +3604,7 @@
 		@media screen and (max-width: 736px) {
 
 			#one {
-				padding: 2em 0 0.1em 0;
+				padding: em 0 0.1em 0;
 			}
 
 		}
