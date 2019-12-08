@@ -11,6 +11,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="main.css" />
+<style>
+  .form-signin {
+  width: 40%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+</style>
   </head>
   <body>
     <header id="header">
@@ -18,18 +29,17 @@
             <a href="index.html" class="logo">ReginaSkate</a>
             <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap" rel="stylesheet">
             <nav id="nav">
-                <a href="#">Map</a>
-                <a href="#">Submit</a>
-                <a href="#">View Spots</a>
-                <a href="#">Log In</a>
+              <a href="map.page.html">Map</a>
+              <a href="submit.html">Submit</a>
+              <a href="view.html">View Spots</a>
+              <a href="login.html">Log In</a>
             </nav>
         </div>
     </header>
     <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
     <form class="form-signin">
-        <img class="mb-4" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <h1>Please sign in</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
@@ -37,9 +47,9 @@
         <button class="button alt" type="submit">Sign in</button>
        
       
+ 
 
-
-    <section id="footer">
+    <section id="footer" style="width:100%"> 
         <div class="inner">
         </div>
         <footer class="footer"></footer>
