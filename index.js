@@ -17,6 +17,25 @@ app.get('', (req,res) => {
     res.render('index', {})
 })
 
+app.get('/', (req, res) => {
+  mongoClient.connect(url,  { useUnifiedTopology: true }, (err, client) => {
+   if(err) {
+       console.log('error')
+        return
+    }
+      const db = client.db('skate')
+       const collection = db.collection('userPosts')
+  })
+      collection.find({}).toarray((err, userPosts) => {    if(err) {
+          console.log('error')
+           return
+      }
+client.close()
+res.json(superheroes)
+      })
+
+})
+
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
   })

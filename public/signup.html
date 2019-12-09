@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,69 +11,52 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="main.css" />
-  <style>
-  </style>
-  
-    </head>
+<style>
+  .form-signin {
+  width: 40%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #ffffff;
+}
+
+
+
+</style>
+  </head>
   <body>
     <header id="header">
         <div class="inner">
             <a href="index.html" class="logo">ReginaSkate</a>
             <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap" rel="stylesheet">
             <nav id="nav">
-                <a href="map.page.html">Map</a>
-                <a href="submit.html">Submit</a>
-                <a href="view.html">View Spots</a>
-                <a href="login.html">Log In</a>
+              <a href="map.page.html">Map</a>
+              <a href="submit.html">Submit</a>
+              <a href="view.html">View Spots</a>
+              <a href="login.html">Log In</a>
             </nav>
         </div>
     </header>
     <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
-    <section id="banner">
-				
-        <div class="inner" >
-            <h1>Add a Spot</h1>
-            <ul class="actions">
-                
-            </ul>
-        </div>
-    </section>
+    <div class="container-fluid ">
+    <form class="form-signin">
+        <h1>Create an account</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button class="button alt" type="submit">Sign Up</button>
+        
 
-    <section id="one">
-        <div class="inner">
-            <header>
-                <h2>Create a Post</h2>
-            </header>
-            
-            <div class="container-fluid ">
-                <div class="form-label-group">
-                <label for="name">Name Your Spot</label> 
-                <input type="text" id="name" class="form-control" placeholder="Name" required autofocus>
-                </div>
-            </div>
-            <div class="custom-file">
-                <label class="custom-file-label" for="photo">Add an image </label>
-                <input type="file" class="custom-file-input" id="photo">
-              </div>
-            <div class="text-area">
-                <label for="text-area">Description</label>
-                <input type="text-area" id="description" class="text-area">
-            </div>
-            <div class="form-label-group">
-                <label for="location">Location</label> 
-                <input type="text" id="name" class="form-control" placeholder="location" required autofocus>
-                </div>
-                <button class="button alt" type="submit">Submit</button>
-
-
-        </div>
-    </section>
-
-  
-    <section id="footer">
+      </div>
+      
+ 
+    <section id="footer" style="width:100%"> 
         <div class="inner">
         </div>
+        <footer class="footer"></footer>
     </section>
 
 
