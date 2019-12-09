@@ -9,7 +9,6 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
   link(rel='stylesheet' href='main.css')
   style.
-    * {background-image: "./images/background.jpg"}
 header#header
   .inner
     a.logo(href='index.html') ReginaSkate
@@ -23,41 +22,26 @@ a.navPanelToggle(href='#menu')
   span.fa.fa-bars
 section#banner
   .inner
-    h1 Welcome to Regina Skate
+    h1 Add a Spot
     ul.actions
-      li
-        a.button.alt(href='view.html') Get Started
 section#one
   .inner
     header
-      h2 View the Map
-    p
-      | See the locations of all skate spots users have shared in Regina. Find the spot closest to you.
-    ul.actions
-      li
-        a.button.alt(href='#') Learn More
-section#two
-  .inner
-    article
-      .content
-        header
-          h3 Add a Spot
-        .image.fit
-          img(src='images/pic01.jpg' alt='')
-        p Share your favouite place to skate in Regina with others.
-        ul.actions
-          li
-            a.button.alt(href='#') Learn More
-    article.alt
-      .content
-        header
-          h3 View Spots
-        .image.fit
-          img(src='images/pic02.jpg' alt='')
-        p View skate spots shared by other users.
-        ul.actions
-          li
-            a.button.alt(href='#') Learn More
+      h2 Create a Post
+    .container-fluid
+      .form-label-group
+        label(for='name') Name Your Spot
+        input#name.form-control(type='text' placeholder='Name' required='' autofocus='')
+    .custom-file
+      label.custom-file-label(for='photo') Add an image 
+      input#photo.custom-file-input(type='file')
+    .text-area
+      label(for='text-area') Description
+      input#description.text-area(type='text-area')
+    .form-label-group
+      label(for='location') Location
+      input#name.form-control(type='text' placeholder='location' required='' autofocus='')
+    button.button.alt(type='submit') Submit
 section#footer
   .inner
 // Optional JavaScript

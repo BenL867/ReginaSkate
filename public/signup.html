@@ -24,6 +24,41 @@
 
 
 </style>
+<script>
+    const form = document.querySelector('form');
+
+    const validateUser = function(username) {
+      const regex = /^[a-z0-9]+$/i;
+      
+      return regex.test(username);
+    }
+    
+    const validateEmail = function(email) {
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      
+      return emailRegex.test(email);
+    }
+    
+    form.onsubmit = function(event) {
+      event.preventDefault();
+      
+      const username = form.elements[0];
+      const email = form.elements[1];
+    
+      if (!validateUser(username.value)) {
+        console.log('Incorrect username');
+        return false;
+      }
+    
+      if (!validateEmail(mail.value)) {
+        console.log('Incorrect Email');
+        return false;
+      }
+    
+
+      return true;
+    } 
+</script>
   </head>
   <body>
     <header id="header">
@@ -58,7 +93,11 @@
         </div>
         <footer class="footer"></footer>
     </section>
-
+    <!-- <form action="save_user.html" method="get" enctype="application/x-www-form-urlencoded" name="login">
+      <input type="text" id="username" name="username" />
+      <input type="password" id="pass" name="pass" />
+      <input type="submit" name="submit" value="Send" />
+    </form> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
