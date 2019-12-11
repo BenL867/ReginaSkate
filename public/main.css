@@ -3369,6 +3369,7 @@
 	#banner {
 		padding: 13em 0 11em 0;
 		background-image: url(https://images.cdn.snowleader.com/media/wysiwyg/Nike-guide-taille.jpg);
+		/* background-image: 'C:\Users\Bria\Documents\ComIT Node.JS\project-3\images\background.jpg'; */
 		background-attachment: fixed; 
 		background-size: cover;
 		background-repeat: no-repeat;
