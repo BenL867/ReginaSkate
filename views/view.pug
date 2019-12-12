@@ -15,48 +15,22 @@ header#header
     link(href='https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap' rel='stylesheet')
     nav#nav
       a(href='map.page.html') Map
-      a(href='submit.html') Submit
+      a(href='post.html') post
       a(href='view.html') View Spots
       a(href='login.html') Log In
 a.navPanelToggle(href='#menu')
   span.fa.fa-bars
 section#banner
   .inner
-    h1 Welcome to Regina Skate
-    ul.actions
-      li
-        a.button.alt(href='#') Get Started
 section#one
   .inner
+    each post in posts
+    li = post
     header
-      h2 View the Map
+      h2
     p
-      | See the locations of all skate spots users have shared in Regina. Find the spot closest to you.
-    ul.actions
-      li
-        a.button.alt(href='#') Learn More
 section#two
   .inner
-    article
-      .content
-        header
-          h3 Add a Spot
-        .image.fit
-          img(src='images/pic01.jpg' alt='')
-        p Share your favouite place to skate in Regina with others.
-        ul.actions
-          li
-            a.button.alt(href='#') Learn More
-    article.alt
-      .content
-        header
-          h3 View Spots
-        .image.fit
-          img(src='images/pic02.jpg' alt='')
-        p View skate spots shared by other users.
-        ul.actions
-          li
-            a.button.alt(href='#') Learn More
 section#footer
   .inner
 // Optional JavaScript

@@ -1,5 +1,6 @@
 doctype html
 head
+  // Required meta tags
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
   // Bootstrap CSS
@@ -9,41 +10,36 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
   link(rel='stylesheet' href='main.css')
   style.
+    .form-signin {
+    width: 40%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #ffffff;
+    }
 header#header
   .inner
     a.logo(href='index.html') ReginaSkate
     link(href='https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap' rel='stylesheet')
     nav#nav
       a(href='map.page.html') Map
-      a(href='submit.html') Submit
+      a(href='post.html') post
       a(href='view.html') View Spots
       a(href='login.html') Log In
 a.navPanelToggle(href='#menu')
   span.fa.fa-bars
-section#banner
+.container-fluid
+  form.form-signin
+    h1 Create an account
+    label.sr-only(for='inputEmail') Email address
+    input#inputEmail.form-control(type='email' placeholder='Email address' required='' autofocus='')
+    label.sr-only(for='inputPassword') Password
+    input#inputPassword.form-control(type='password' placeholder='Password' required='')
+    button.button.alt(type='submit') Sign Up
+section#footer(style='width:100%')
   .inner
-    h1 Add a Spot
-    ul.actions
-section#one
-  .inner
-    header
-      h2 Create a Post
-    .container-fluid
-      .form-label-group
-        label(for='name') Name Your Spot
-        input#name.form-control(type='text' placeholder='Name' required='' autofocus='')
-    .custom-file
-      label.custom-file-label(for='photo') Add an image 
-      input#photo.custom-file-input(type='file')
-    .text-area
-      label(for='text-area') Description
-      input#description.text-area(type='text-area')
-    .form-label-group
-      label(for='location') Location
-      input#name.form-control(type='text' placeholder='location' required='' autofocus='')
-    button.button.alt(type='submit') Submit
-section#footer
-  .inner
+  footer.footer
 // Optional JavaScript
 // jQuery first, then Popper.js, then Bootstrap JS
 script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')

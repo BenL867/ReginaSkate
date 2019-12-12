@@ -22,7 +22,7 @@
             <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed&display=swap" rel="stylesheet">
             <nav id="nav">
                 <a href="map.page.html">Map</a>
-                <a href="submit.html">Submit</a>
+                <a href="post.html">post</a>
                 <a href="view.html">View Spots</a>
                 <a href="login.html">Log In</a>
             </nav>
@@ -46,24 +46,26 @@
                 <h2>Create a Post</h2>
             </header>
             
-            <div class="container-fluid ">
+            <!-- <div class="container-fluid "> -->
                 <div class="form-label-group">
                 <label for="name">Name Your Spot</label> 
-                <input type="text" id="name" class="form-control" placeholder="Name" required autofocus>
+                <input type="text" id="name" class="form-control" placeholder="Name" name="name" required autofocus>
                 </div>
-            </div>
+            <!-- </div> -->
+            <br>
             <div class="custom-file">
                 <label class="custom-file-label" for="photo">Add an image </label>
-                <input type="file" class="custom-file-input" id="photo">
+                <input type="file" class="custom-file-input" id="image" name="image">
               </div>
             <div class="text-area">
                 <label for="text-area">Description</label>
-                <input type="text-area" id="description" class="text-area">
+                <input type="text" id="description" name="description" class="form-control"  placeholder="description" required autofocus>
             </div>
             <div class="form-label-group">
                 <label for="location">Location</label> 
-                <input type="text" id="name" class="form-control" placeholder="location" required autofocus>
+                <input type="text" id="location" name="location" class="form-control" placeholder="location" required autofocus>
                 </div>
+                <br>
                 <button class="button alt" type="submit">Submit</button>
 
 

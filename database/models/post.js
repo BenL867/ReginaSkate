@@ -1,15 +1,11 @@
 const mongoose = require('mongoose')
  
 const PostSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  content: String,
-  username: String,
+  _id: mongoose.Schema.Types.ObjectId,
+  name: String,
   image: String,
-  createdAt: {
-    type: Date,
-    default: new Date()
-  }
+  description: String,
+  location: String,
 })
  
 const Post = mongoose.model('Post', PostSchema)
