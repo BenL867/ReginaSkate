@@ -1,0 +1,66 @@
+extends ./layout.pug
+
+block content
+
+
+
+
+    section#banner
+      .inner
+        h1 Welcome to Regina Skate
+        ul.actions
+          li
+            a.button.alt(href='#a3') Get Started
+    #a1
+    section#one
+      .inner
+        header
+          br
+          h2 View the Map
+          p See the locations of all skate spots users have shared in Regina. Find the spot closest to you.
+          include ./map.pug
+          br
+   
+    #a2
+    section#two
+      .inner
+        article
+          .content
+            header
+              br
+              h2 Add a Post
+              p Share your favouite place to skate in Regina with others.
+              include ./create.pug
+              link(rel='stylesheet', href="css/styles.css")
+              block styles
+              script(src="/js/scripts.js")
+              block scripts
+              br
+    #a3
+    section#one
+        .inner
+          article.alt
+            .content
+              header
+                br
+                h2 #[ View Spots ]
+                p View skate spots shared by other users.
+                each post in posts
+                  div.post-container
+                    a(href="/posts/" + post._id)
+                      h4=post.name
+                    img(src="" + post.image)
+                    p Description:
+                    h4=post.description
+                    p Location:
+                    h4=post.location
+                      //- each comment in comments
+                      //-   .post-container
+                      //-     a(href="/comments/" + comment._id)  
+                      //-       h5=comment 
+    
+    #a4
+    section#footer
+      br
+      .inner
+        include ./login.pug

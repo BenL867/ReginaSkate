@@ -1,0 +1,14 @@
+extends ./layout.pug
+
+block content
+
+    .container-fluid
+    form.form-signin
+        h1 Please log in
+        label.sr-only(for='inputUsername') Username
+        input#inputUsername.form-control(type='username' placeholder='Username' required='' autofocus='')
+        label.sr-only(for='inputPassword') Password
+        input#inputPassword.form-control(type='password' placeholder='Password' required='' autofocus='')
+        button.button.alt(type='submit') Sign in
+        p   Don't have an account? 
+        a(href='#') Create one now.

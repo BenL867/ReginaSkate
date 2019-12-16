@@ -1,0 +1,21 @@
+block content
+
+    style.
+        /* Set the size of the div element that contains the map */
+        #map {
+        height: 600px;  /* The height is 600 pixels */
+        width: 80%;  /* The width is the width of the web page */
+        }
+    #map
+    script.
+        function initMap() {
+            var wascana = {lat: 50.433601, lng: -104.592072};
+            var map = new google.maps.Map(
+                document.getElementById('map') , {zoom: 16, center: wascana});
+            var marker = new google.maps.Marker({position: wascana, map: map});}
+    script(async='' defer='' src='https://maps.googleapis.com/maps/api/js?key=	AIzaSyBDlGmA373w93ScS1qzwZrgXBtLqy3Kiaw&callback=initMap')
+
+    // Initialize and add the map
+    // The location of Uluru
+    // The map, centered at Uluru
+    // The marker, positioned at Uluru

@@ -1,0 +1,9 @@
+extends ./layout.pug
+
+block content
+
+  each post in posts
+    div.post-container
+      a(href="/posts/" + post._id)
+        img(src="/img/posts/" + post.image)
+        h3=post.name
