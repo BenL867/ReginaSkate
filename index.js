@@ -2,13 +2,13 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose')
-const mongoDB = 'mongodb://127.0.0.1/skate';
 const MongoClient = require('mongodb')
 const ObjectID = MongoClient.ObjectID
 const url = 'mongodb://localhost:27017'
 const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 const mapsClient = require('./controllers/maps')
+
 // const commentsClient = require('./controllers/comments')
 const googleMapsClient = require('@google/maps').createClient({
 
@@ -23,11 +23,24 @@ googleMapsClient.geocode({
   }
 });
 
+require('dotenv').config()
+const app = express()
+const port = process.env.PORT || 3000
+const urlencodedParser = bodyParser.urlencoded({extended: false})
+
+var mongoDB = process.env.MONGO_CONNECT_URI
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 app.set('view engine', 'pug')
 app.use(urlencodedParser)
 
 app.get('/', (req, res) => {
   MongoClient.connect(url, { useUnifiedTopology: true }, (err, client) => {
+    if (err){
+      console.log('a mongodb connection error has occured')
+    }
     const db = client.db('skate')
     const collection = db.collection('posts')
     collection.find({}).toArray((err, posts) => {
@@ -65,7 +78,7 @@ app.post('/posts', (req, res) => {
     const collection = db.collection('posts')
     collection.insertOne({
       name: req.body.post.toUpperCase(),
-      image: ''
+      image: '/'
     }, (err, result) => {
       client.close()
       res.redirect('/')
