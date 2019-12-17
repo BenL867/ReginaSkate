@@ -5,7 +5,7 @@ const ObjectID = MongoClient.ObjectID;
 const url = 'mongodb://localhost:27017';
 const bodyParser = require("body-parser");
 const mapsClient = require('./controllers/maps');
-const db = mongoose.connection;
+// const db = mongoose.connection;
 // const commentsClient = require('./controllers/comments')
 const googleMapsClient = require('@google/maps').createClient({
 
@@ -26,7 +26,7 @@ const urlencodedParser = bodyParser.urlencoded({extended: false})
 
 var mongoDB = process.env.MONGO_CONNECT_URI
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-// var db = mongoose.connection;
+var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.set('view engine', 'pug')
