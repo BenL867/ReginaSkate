@@ -9,7 +9,7 @@ const url = 'mongodb://localhost:27017'
 const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 const mapsClient = require('./controllers/maps')
-const commentsClient = require('./controllers/comments')
+// const commentsClient = require('./controllers/comments')
 const googleMapsClient = require('@google/maps').createClient({
 
 
