@@ -1,12 +1,9 @@
 const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
 const mongoose = require('mongoose')
 const MongoClient = require('mongodb')
 const ObjectID = MongoClient.ObjectID
 const url = 'mongodb://localhost:27017'
 const bodyParser = require("body-parser");
-const urlencodedParser = bodyParser.urlencoded({extended: false})
 const mapsClient = require('./controllers/maps')
 
 // const commentsClient = require('./controllers/comments')
@@ -22,7 +19,6 @@ googleMapsClient.geocode({
     console.log(response.json.results);
   }
 });
-
 require('dotenv').config()
 const app = express()
 const port = process.env.PORT || 3000
