@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const MongoClient = require('mongodb');
+const MongoClient = require('mongodb').MongoClient;
 const ObjectID = MongoClient.ObjectID;
 const url = 'mongodb://localhost:27017';
 const bodyParser = require("body-parser");
@@ -31,6 +31,14 @@ if(!db)
     console.log("Error connecting db")
 else
     console.log("Db connected successfully")
+
+    const uri = "mongodb+srv://dbUser:dbUserPassword@cluster0-reqdz.mongodb.net/test?retryWrites=true&w=majority";
+    const client = new MongoClient(uri, { useNewUrlParser: true });
+    client.connect(err => {
+      const collection = client.db("test").collection("devices");
+      // perform actions on the collection object
+      client.close();
+    });
 
 app.set('view engine', 'pug')
 app.use(urlencodedParser)
