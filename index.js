@@ -34,7 +34,7 @@ const urlencodedParser = bodyParser.urlencoded({extended: false})
 
 app.set('view engine', 'pug')
 app.use(urlencodedParser)
-
+app.use(express.static('public/img/posts/'))
 app.get('/', (req, res) => {
   MongoClient.connect(uri, { useUnifiedTopology: true }, (err, client) => {
     const db = client.db('skate')
@@ -74,9 +74,10 @@ app.post('/posts', (req, res) => {
     const collection = db.collection('posts')
     collection.insertOne({
       name: req.body.post.toUpperCase(),
-      image: req.body.image,
       description: req.body.description,
       location: req.body.location,
+      image: 'reginaskateplaza7.jpg'
+      
       
     }, (err, result) => {
       client.close()
