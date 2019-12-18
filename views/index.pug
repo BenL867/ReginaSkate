@@ -2,16 +2,13 @@ extends ./layout.pug
 
 block content
 
-
-
-
     section#banner
       .inner
         h1 Welcome to Regina Skate
         ul.actions
           li
             a.button.alt(href='#a3') Get Started
-    #a1
+    
     section#one
       .inner
         header
@@ -47,18 +44,16 @@ block content
                 p View skate spots shared by other users.
                 each post in posts
                   div.post-container
+                    //- a(href="/posts/" + post._id)
+                    //-   img(src="/img/spots/" + post.image)
+                    //-   h4=post.name
+                    //- p Description:
+                    //- h4=post.description
+                    //- p Location:
+                    //- h4=post.location
                     a(href="/posts/" + post._id)
-                      h4=post.name
-                    img(post.image)
-                    p Description:
-                    h4=post.description
-                    p Location:
-                    h4=post.location
-                      //- each comment in comments
-                      //-   .post-container
-                      //-     a(href="/comments/" + comment._id)  
-                      //-       h5=comment 
-    
+                      img(src="/img/spots/" + post.image)
+                      h3=post.name
     #a4
     section#footer
       br
