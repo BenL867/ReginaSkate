@@ -74,7 +74,10 @@ app.post('/posts', (req, res) => {
     const collection = db.collection('posts')
     collection.insertOne({
       name: req.body.post.toUpperCase(),
-      image: req.body.image
+      image: req.body.image,
+      description: req.body.description,
+      location: req.body.description,
+      
     }, (err, result) => {
       client.close()
       res.redirect('/')
