@@ -27,16 +27,16 @@ const urlencodedParser = bodyParser.urlencoded({extended: false})
 var mongoDB = process.env.MONGO_CONNECT_URI
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+if(!db)
+    console.log("Error connecting db")
+else
+    console.log("Db connected successfully")
 
 app.set('view engine', 'pug')
 app.use(urlencodedParser)
 
 app.get('/', (req, res) => {
   MongoClient.connect(url, { useUnifiedTopology: true }, (err, client) => {
-    if (err){
-      console.log('a mongodb connection error has occured')
-    }
     const db = client.db('skate')
     const collection = db.collection('posts')
     collection.find({}).toArray((err, posts) => {
