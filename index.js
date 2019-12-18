@@ -76,7 +76,7 @@ app.post('/posts', (req, res) => {
       name: req.body.post.toUpperCase(),
       image: req.body.image,
       description: req.body.description,
-      location: req.body.description,
+      location: req.body.location,
       
     }, (err, result) => {
       client.close()
