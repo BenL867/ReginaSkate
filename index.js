@@ -24,18 +24,18 @@ const app = express()
 const port = process.env.PORT || 3000
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 
-var mongoDB = process.env.MONGO_CONNECT_URI
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-var db = mongoose.connection;
-if(!db)
-    console.log("Error connecting db")
-else
-    console.log("Db connected successfully")
+// var mongoDB = process.env.MONGO_CONNECT_URI
+// mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+// var db = mongoose.connection;
+// if(!db)
+//     console.log("Error connecting db")
+// else
+//     console.log("Db connected successfully")
 
     const uri = "mongodb+srv://dbUser:dbUserPassword@cluster0-reqdz.mongodb.net/test?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
-      const collection = client.db("test").collection("devices");
+      const collection = client.db("skate").collection("posts");
       // perform actions on the collection object
       client.close();
     });
